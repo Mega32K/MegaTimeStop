@@ -1,0 +1,17 @@
+{
+  "stop" : {
+    "sounds" : [
+      "megatimestop:stop"
+    ]
+  },
+  "knife_throw" : {
+    "sounds" : [
+      "megatimestop:knife_throw"
+    ]
+  },
+  "knife_hit" : {
+    "sounds": [
+      "megatimestop:knife_hit"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+package com.mega.timestop.common;
+
+import com.mega.timestop.render.entity.KnifeEntity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+public class EntityRegister {
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, "megatimestop");
+    public static final RegistryObject<EntityType<KnifeEntity>> flyingSwordEntity = ENTITIES.register("flying_sword", () -> EntityType.Builder.of(KnifeEntity::new, MobCategory.MISC).sized(3, 0.5F).build("flying_sword"));
+
+}
