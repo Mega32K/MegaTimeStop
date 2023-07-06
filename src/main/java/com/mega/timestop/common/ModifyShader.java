@@ -17,7 +17,6 @@ public class ModifyShader {
 
             ShaderGetter.updateUniform_post("time", time_the_world)
             ;
-            System.out.println(time_the_world);
         } else time_the_world = 0f;
     }
 }

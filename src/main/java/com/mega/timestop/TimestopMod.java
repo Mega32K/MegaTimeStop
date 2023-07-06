@@ -72,7 +72,6 @@ public class TimestopMod {
         MinecraftForge.EVENT_BUS.register(this);
         ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
         s.scheduleAtFixedRate(() -> {
-            Time.timer.advanceTime(Util.getNanos() / 1000000L);
             if (!Time.get()) Time.millis++;
         }, 1, 1, TimeUnit.MILLISECONDS);
     }

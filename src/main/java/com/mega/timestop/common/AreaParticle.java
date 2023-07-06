@@ -93,7 +93,6 @@ public class AreaParticle extends Particle {
         this.xd *= this.slow;
         this.yd *= this.slow;
         this.zd *= this.slow;
-        System.out.println(age);
         if (age > MAX_LIFE / 2 + 10)
             growing = false;
         if (growing)
