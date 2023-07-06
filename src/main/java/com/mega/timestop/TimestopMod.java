@@ -5,6 +5,7 @@ import com.mega.timestop.common.SoundsRegister;
 import com.mega.timestop.render.entity.KnifeRenderer;
 import com.mojang.logging.LogUtils;
 import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -71,6 +72,7 @@ public class TimestopMod {
         MinecraftForge.EVENT_BUS.register(this);
         ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
         s.scheduleAtFixedRate(() -> {
+            Time.timer.advanceTime(Util.getNanos() / 1000000L);
             if (!Time.get()) Time.millis++;
         }, 1, 1, TimeUnit.MILLISECONDS);
     }

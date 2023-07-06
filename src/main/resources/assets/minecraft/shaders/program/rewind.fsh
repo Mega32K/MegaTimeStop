@@ -16,11 +16,11 @@ const vec4 Two = vec4(2.0);
 #define PI 3.14159265359
 vec4 HueShift (in vec3 Color, in float Shift)
 {
-    vec3 P = vec3(0.54735)*dot(vec3(0.54735),Color);
+    vec3 P = vec3(0.57735)*dot(vec3(0.57735),Color);
 
     vec3 U = Color-P;
 
-    vec3 V = cross(vec3(0.54735),U);
+    vec3 V = cross(vec3(0.57735),U);
 
     Color = U*cos(Shift*6.2832) + V*sin(Shift*6.2832) + P;
 

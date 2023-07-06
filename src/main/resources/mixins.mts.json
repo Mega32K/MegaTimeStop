@@ -6,6 +6,7 @@
   "package": "com.mega.timestop.mixin",
   "mixins": [
     "CameraMixin",
+    "LivingEntityMixin",
     "ServerMixin"
   ],
   "injectors": {

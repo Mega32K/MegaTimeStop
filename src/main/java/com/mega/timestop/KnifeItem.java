@@ -22,7 +22,7 @@ public class KnifeItem extends Item {
         super(p_41383_);
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", 5, AttributeModifier.Operation.ADDITION));
-        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", 2, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", -1, AttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
 
@@ -40,7 +40,7 @@ public class KnifeItem extends Item {
         if (!level.isClientSide()) {
             for (int i = 0; i < knivesToThrow; i++) {
                 KnifeEntity knifeEntity = KnifeEntity.create(level, player);
-                knifeEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F, i == 0 ? 1.0F : 16.0F);
+                knifeEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F, i == 0 ? 1.0F : 28.0F);
                 level.addFreshEntity(knifeEntity);
             }
             if (!player.isCreative())

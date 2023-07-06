@@ -179,7 +179,6 @@ public abstract class MinecraftMixin {
 
     @Inject(method = "runTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/MouseHandler;turnPlayer()V"))
     public void runTick(boolean p_91384_, CallbackInfo ci) {
-        Time.times++;
         for (int i = 0; i < Time.timer.advanceTime(Util.getMillis()); i++)
             if (/*Time.times % 2 == 0 && */level != null && player != null && Time.get()) {
                 level.guardEntityTick(level::tickNonPassenger, player);
@@ -187,16 +186,8 @@ public abstract class MinecraftMixin {
                 gameRenderer.itemInHandRenderer.tick();
                 this.gameRenderer.tick();
             }
-        if (!Time.get()) {
-            timer.partialTick = Time.timer.partialTick;
-        }
     }
 
-    @Inject(method = "runTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;runAllTasks()V"))
-    public void runTick_tick(boolean p_91384_, CallbackInfo ci) {
-        timer.partialTick = Time.timer.partialTick;
-        realPartialTick = pause ? pausePartialTick : timer.partialTick;
-    }
 
     @Inject(method = "runTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/GameRenderer;render(FJZ)V"))
     public void postEvent(boolean p_91384_, CallbackInfo ci) {

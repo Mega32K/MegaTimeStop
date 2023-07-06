@@ -1,4 +1,5 @@
 {
   "tab.mts.name" : "MegaTimeStop",
-  "item.megatimestop.time_clock" : "TimeClock"
+  "item.megatimestop.time_clock" : "TimeClock",
+  "item.megatimestop.knife" : "Knife"
 }
